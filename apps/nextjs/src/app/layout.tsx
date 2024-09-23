@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 
-import { cn } from "@acme/ui";
-import { ThemeProvider, ThemeToggle } from "@acme/ui/theme";
-import { Toaster } from "@acme/ui/toast";
+import { cn } from "@app/ui";
+import { ThemeProvider, ThemeToggle } from "@app/ui/theme";
+import { Toaster } from "@app/ui/toast";
 
 import "~/app/globals.css";
 

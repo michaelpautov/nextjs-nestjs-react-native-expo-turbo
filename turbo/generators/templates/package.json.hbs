@@ -1,5 +1,5 @@
 {
-  "name": "@acme/{{ name }}",
+  "name": "@app/{{ name }}",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -16,12 +16,12 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@app/eslint-config": "workspace:*",
+    "@app/prettier-config": "workspace:*",
+    "@app/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@app/prettier-config"
 }
