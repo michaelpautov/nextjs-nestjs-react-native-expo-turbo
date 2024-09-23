@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Variable
-DOCKER_COMPOSE_FILE="docker-compose.yml"
-
 # Function to clean up the monorepo after creating a new branch
 project_cleanup() {
     echo "Installing dependencies..."
@@ -19,10 +16,7 @@ project_setup() {
     echo "Building the necessary packages..."
     pnpm run build &&
     echo "Installing builds where needed..."
-    pnpm i &&
-    echo "Building, creating and staring a docker image for the NATS Protocol in a detached mode..."
-#    docker compose -f "$DOCKER_COMPOSE_FILE" build &&
-#    docker compose -f "$DOCKER_COMPOSE_FILE" up -d
+    pnpm i
 }
 
 
