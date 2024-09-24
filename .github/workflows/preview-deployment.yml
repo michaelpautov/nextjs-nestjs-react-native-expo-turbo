@@ -7,6 +7,7 @@ on:
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
+    environment: Production  # Add this line to use the Production environment
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
@@ -28,8 +29,9 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
-          DEPLOYMENT_URL=$(npx vercel --token=$VERCEL_TOKEN --scope=$VERCEL_ORG_ID --yes)
+          DEPLOYMENT_URL=$(npx vercel --token=$VERCEL_TOKEN --scope=$VERCEL_ORG_ID --yes --project-id=$VERCEL_PROJECT_ID)
           echo "deployment_url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
 
       - name: Comment PR
