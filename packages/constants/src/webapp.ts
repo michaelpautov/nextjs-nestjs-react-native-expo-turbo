@@ -1,3 +1,3 @@
 export const WEBAPP_CONSTANTS = {
-  TEST_CONSTANTS: "Constants variable"
-}
+  TEST_CONSTANTS: "Constants variable",
+};
