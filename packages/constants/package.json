@@ -1,14 +1,11 @@
 {
-  "name": "@app/validators",
+  "name": "@app/constants",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./src/index.ts"
-    }
+    ".": "./src/index.ts"
   },
   "scripts": {
     "build": "tsc",
@@ -20,7 +17,9 @@
   },
   "prettier": "@app/prettier-config",
   "dependencies": {
-    "zod": "catalog:"
+    "eslint": "^9.11.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2"
   },
   "devDependencies": {
     "@app/eslint-config": "workspace:*",

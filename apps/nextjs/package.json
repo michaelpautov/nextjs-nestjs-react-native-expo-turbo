@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --"
   },
+  "prettier": "@app/prettier-config",
   "dependencies": {
     "@app/db": "workspace:*",
     "@app/ui": "workspace:*",
@@ -25,6 +26,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@app/constants": "workspace:*",
     "@app/eslint-config": "workspace:*",
     "@app/prettier-config": "workspace:*",
     "@app/tailwind-config": "workspace:*",
@@ -38,6 +40,5 @@
     "prettier": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@app/prettier-config"
+  }
 }

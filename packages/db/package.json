@@ -2,6 +2,7 @@
   "name": "@app/db",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -17,9 +18,8 @@
       "default": "./src/schema.ts"
     }
   },
-  "license": "MIT",
-  "scripts": {
-  },
+  "scripts": {},
+  "prettier": "@app/prettier-config",
   "dependencies": {
     "@vercel/postgres": "^0.9.0",
     "drizzle-orm": "^0.33.0",
@@ -35,6 +35,5 @@
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@app/prettier-config"
+  }
 }

@@ -2,18 +2,19 @@
   "name": "@app/tailwind-config",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
     "./native": "./native.ts",
     "./web": "./web.ts"
   },
-  "license": "MIT",
   "scripts": {
     "clean": "git clean -xdf .cache .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "typecheck": "tsc --noEmit"
   },
+  "prettier": "@app/prettier-config",
   "dependencies": {
     "postcss": "^8.4.41",
     "tailwindcss": "catalog:",
@@ -26,6 +27,5 @@
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@app/prettier-config"
+  }
 }
