@@ -58,7 +58,7 @@ importers:
         specifier: 'catalog:'
         version: 5.5.4
 
-  apps/nextjs:
+  apps/webapp:
     dependencies:
       '@app/db':
         specifier: workspace:*
