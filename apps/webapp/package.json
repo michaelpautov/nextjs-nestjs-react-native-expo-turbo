@@ -31,7 +31,7 @@
     "@app/prettier-config": "workspace:*",
     "@app/tailwind-config": "workspace:*",
     "@app/tsconfig": "workspace:*",
-    "@types/node": "^20.14.15",
+    "@types/node": "catalog:",
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
     "dotenv-cli": "^7.4.2",

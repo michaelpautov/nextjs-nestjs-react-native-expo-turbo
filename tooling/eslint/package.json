@@ -6,6 +6,7 @@
   "exports": {
     "./base": "./base.js",
     "./nextjs": "./nextjs.js",
+    "./nestjs": "./nestjs.js",
     "./react": "./react.js"
   },
   "scripts": {
