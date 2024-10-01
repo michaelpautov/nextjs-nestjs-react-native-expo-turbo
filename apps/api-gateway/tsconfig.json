@@ -1,0 +1,4 @@
+{
+  "extends": "@app/tsconfig/nest-base.json",
+
+}
