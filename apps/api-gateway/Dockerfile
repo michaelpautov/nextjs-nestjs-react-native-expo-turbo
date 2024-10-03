@@ -10,7 +10,7 @@ FROM base AS dev
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY server/api-gateway ./server/api-gateway
+COPY apps/api-gateway ./apps/api-gateway
 COPY tooling ./tooling
 COPY packages ./packages
 
@@ -29,7 +29,7 @@ COPY --from=dev app/ .
 USER node
 
 # Command to run the application's 'dist/main' file with 'node'
-CMD ["node", "server/api-gateway/dist/main"]
+CMD ["node", "apps/api-gateway/dist/main"]
 
 ###########
 # WIP
@@ -49,7 +49,7 @@ CMD ["node", "server/api-gateway/dist/main"]
 # RUN pnpm fetch
 
 # COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-# COPY server/api-gateway ./server/api-gateway
+# COPY apps/api-gateway ./apps/api-gateway
 # COPY tooling ./tooling
 # COPY packages ./packages
 
@@ -68,11 +68,11 @@ CMD ["node", "server/api-gateway/dist/main"]
 # FROM base AS prod
 
 # WORKDIR /app
-# COPY --from=dev --chown=node:node /app/server/api-gateway/dist ./server/api-gateway/dist
-# COPY --from=dev --chown=node:node /app/server/api-gateway/node_modules ./server/api-gateway/node_modules
+# COPY --from=dev --chown=node:node /app/apps/api-gateway/dist ./apps/api-gateway/dist
+# COPY --from=dev --chown=node:node /app/apps/api-gateway/node_modules ./apps/api-gateway/node_modules
 # COPY --from=dev --chown=node:node /app/node_modules ./node_modules
 
 # USER node
 
 # Command to run the application's 'dist/main' file with 'node'
-# CMD ["node", "server/api-gateway/dist/main"]
+# CMD ["node", "apps/api-gateway/dist/main"]
