@@ -2,7 +2,7 @@ app = 'nextjs-nestjs-react-native-expo-turbo'
 primary_region = 'sin'
 
 [build]
-  dockerfile = "server/api-gateway/Dockerfile"
+  dockerfile = "apps/api-gateway/Dockerfile"
 
 [env]
   PORT = '8080'
