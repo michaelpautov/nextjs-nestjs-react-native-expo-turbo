@@ -1,0 +1,15 @@
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: server/api-gateway/Dockerfile
+      target: prod
+    restart: always
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+
+networks:
+  default:
+    name: app-network
