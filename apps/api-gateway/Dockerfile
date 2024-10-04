@@ -29,4 +29,4 @@ COPY --from=dev app/ .
 USER node
 
 EXPOSE 8080
-CMD ["node", "/app/apps/api-gateway/dist/main"]
+CMD ["node", "/apps/api-gateway/dist/main"]
