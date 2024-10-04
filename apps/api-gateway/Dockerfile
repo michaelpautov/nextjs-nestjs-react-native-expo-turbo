@@ -28,4 +28,5 @@ COPY --from=dev app/ .
 
 USER node
 
+
 CMD ["node", "apps/api-gateway/dist/main"]
