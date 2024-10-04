@@ -4,7 +4,6 @@ services:
       context: .
       dockerfile: apps/api-gateway/Dockerfile
       target: prod
-    restart: always
     ports:
       - "8080:8080"
     env_file:
