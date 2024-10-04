@@ -29,5 +29,5 @@ COPY --from=dev app/ .
 USER node
 
 EXPOSE 8080
-RUN sleep 500;
+#RUN sleep 500;
 #CMD ["node", "/apps/api-gateway/dist/main"]
