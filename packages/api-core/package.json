@@ -18,7 +18,9 @@
     "@nestjs/common": "catalog:nestjs",
     "@nestjs/config": "catalog:nestjs",
     "class-transformer": "catalog:nestjs",
-    "class-validator": "catalog:nestjs"
+    "class-validator": "catalog:nestjs",
+    "pino": "^9.3.1",
+    "pino-pretty": "^11.2.1"
   },
   "devDependencies": {
     "@app/constants": "workspace:*",
