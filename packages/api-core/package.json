@@ -15,18 +15,23 @@
   },
   "prettier": "@app/prettier-config",
   "dependencies": {
+    "@nestjs/cache-manager": "catalog:nestjs",
     "@nestjs/common": "catalog:nestjs",
     "@nestjs/config": "catalog:nestjs",
+    "cache-manager": "catalog:nestjs",
+    "cache-manager-redis-store": "catalog:nestjs",
     "class-transformer": "catalog:nestjs",
     "class-validator": "catalog:nestjs",
     "pino": "^9.3.1",
-    "pino-pretty": "^11.2.1"
+    "pino-pretty": "^11.2.1",
+    "redis": "catalog:nestjs"
   },
   "devDependencies": {
     "@app/constants": "workspace:*",
     "@app/eslint-config-nest": "workspace:*",
     "@app/prettier-config": "workspace:*",
     "@app/tsconfig": "workspace:*",
+    "dotenv-cli": "catalog:",
     "eslint": "catalog:nestjs",
     "prettier": "catalog:",
     "typescript": "catalog:"

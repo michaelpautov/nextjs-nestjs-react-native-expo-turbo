@@ -4,6 +4,9 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable pnpm
 
+# Install Python and build tools
+RUN apk add --no-cache python3 make g++ build-base
+
 # DEFINING DEVELOPMENT STAGE
 FROM base AS dev
 
@@ -28,6 +31,4 @@ COPY --from=dev app/ .
 
 USER node
 
-EXPOSE 8080
-#RUN sleep 500;
-#CMD ["node", "/apps/api-gateway/dist/main"]
+CMD ["node", "apps/api-gateway/dist/main"]

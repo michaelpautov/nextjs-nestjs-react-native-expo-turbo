@@ -1,13 +1,38 @@
 services:
-  api-gateway:
+  nats:
+    image: nats:latest
+    ports:
+      # Used for NATS itself
+      - "4222:4222"
+      # Used for NATS GUI
+      - "8222:8222"
+    command: "--jetstream"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "${REDIS_PORT}:6379"
+
+  # DEV
+
+  dev-api-gateway:
     build:
       context: .
       dockerfile: apps/api-gateway/Dockerfile
-      target: prod
+      target: dev
+    image: api-gateway:latest
     ports:
       - "8080:8080"
+    volumes:
+      - .:/app
+      - /app/node_modules
     env_file:
-      - .env
+      - .env.development
+    environment:
+      - NATS_HOST=nats
+    depends_on:
+      - nats
+    command: ["pnpm", "run", "-C", "apps/api-gateway", "start"]
 
 networks:
   default:

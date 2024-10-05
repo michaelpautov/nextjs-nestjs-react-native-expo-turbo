@@ -23,6 +23,10 @@ catalog:
 catalogs:
   nestjs:
     eslint: ^8.42.0
+    "@nestjs/cache-manager": ^2.2.2
+    cache-manager: ^5.2.3
+    cache-manager-redis-store: ^3.0.1
+    redis: ^4.6.10
     "@nestjs/common": ^10.0.0
     "@nestjs/core": ^10.0.0
     "@nestjs/cli": ^10.0.0
