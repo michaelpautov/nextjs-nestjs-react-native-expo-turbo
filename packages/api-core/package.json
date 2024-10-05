@@ -5,12 +5,13 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm with-env tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "tsc",
+    "dev": "pnpm with-end tsc",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint ./src",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
   },
   "prettier": "@app/prettier-config",
   "dependencies": {
