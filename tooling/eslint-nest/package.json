@@ -1,0 +1,25 @@
+{
+  "name": "@app/eslint-config-nest",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@app/prettier-config",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0"
+  },
+  "devDependencies": {
+    "@app/prettier-config": "workspace:*",
+    "@app/tsconfig": "workspace:*",
+    "eslint": "catalog:nestjs",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  }
+}

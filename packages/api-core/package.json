@@ -1,0 +1,31 @@
+{
+  "name": "@app/api-core",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint ./src",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@app/prettier-config",
+  "dependencies": {
+    "@nestjs/common": "catalog:nestjs",
+    "@nestjs/config": "catalog:nestjs",
+    "class-transformer": "catalog:nestjs",
+    "class-validator": "catalog:nestjs"
+  },
+  "devDependencies": {
+    "@app/constants": "workspace:*",
+    "@app/eslint-config-nest": "workspace:*",
+    "@app/prettier-config": "workspace:*",
+    "@app/tsconfig": "workspace:*",
+    "eslint": "catalog:nestjs",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  }
+}
