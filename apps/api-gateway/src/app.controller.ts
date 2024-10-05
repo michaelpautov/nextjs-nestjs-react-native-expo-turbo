@@ -1,13 +1,14 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get, Inject } from "@nestjs/common";
+import { ClientProxy } from "@nestjs/microservices";
 
-import { AppService } from "./app.service";
+import { NATS_MESSAGES, SERVICE_NAMES } from "@app/api-core";
 
-@Controller()
+@Controller("users")
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(@Inject(SERVICE_NAMES.NATS) private natsClient: ClientProxy) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getHello() {
+    return this.natsClient.send({ cmd: NATS_MESSAGES.USERS.GET }, {});
   }
 }

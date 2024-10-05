@@ -270,6 +270,124 @@ importers:
         specifier: 'catalog:'
         version: 5.6.2
 
+  apps/users-microservice:
+    dependencies:
+      '@fastify/multipart':
+        specifier: catalog:nestjs
+        version: 8.3.0
+      '@fastify/static':
+        specifier: catalog:nestjs
+        version: 7.0.4
+      '@nestjs/common':
+        specifier: catalog:nestjs
+        version: 10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+      '@nestjs/config':
+        specifier: catalog:nestjs
+        version: 3.2.3(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(rxjs@7.8.1)
+      '@nestjs/core':
+        specifier: catalog:nestjs
+        version: 10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/microservices@10.4.4)(@nestjs/platform-express@10.4.4)(@nestjs/websockets@10.4.4)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+      '@nestjs/microservices':
+        specifier: catalog:nestjs
+        version: 10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.4)(@nestjs/websockets@10.4.4)(cache-manager@5.7.6)(ioredis@5.4.1)(nats@2.28.2)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+      '@nestjs/platform-fastify':
+        specifier: catalog:nestjs
+        version: 10.4.4(@fastify/static@7.0.4)(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/microservices@10.4.4)(@nestjs/platform-express@10.4.4)(@nestjs/websockets@10.4.4)(reflect-metadata@0.2.2)(rxjs@7.8.1))
+      class-transformer:
+        specifier: catalog:nestjs
+        version: 0.5.1
+      class-validator:
+        specifier: catalog:nestjs
+        version: 0.14.1
+      dotenv-cli:
+        specifier: 'catalog:'
+        version: 7.4.2
+      nats:
+        specifier: catalog:nestjs
+        version: 2.28.2
+      reflect-metadata:
+        specifier: catalog:nestjs
+        version: 0.2.2
+      rxjs:
+        specifier: catalog:nestjs
+        version: 7.8.1
+      zod:
+        specifier: 'catalog:'
+        version: 3.23.8
+    devDependencies:
+      '@app/api-core':
+        specifier: workspace:*
+        version: link:../../packages/api-core
+      '@app/constants':
+        specifier: workspace:*
+        version: link:../../packages/constants
+      '@app/eslint-config-nest':
+        specifier: workspace:*
+        version: link:../../tooling/eslint-nest
+      '@app/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      '@nestjs/cache-manager':
+        specifier: catalog:nestjs
+        version: 2.2.2(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/microservices@10.4.4)(@nestjs/platform-express@10.4.4)(@nestjs/websockets@10.4.4)(reflect-metadata@0.2.2)(rxjs@7.8.1))(cache-manager@5.7.6)(rxjs@7.8.1)
+      '@nestjs/cli':
+        specifier: catalog:nestjs
+        version: 10.4.5
+      '@nestjs/schematics':
+        specifier: catalog:nestjs
+        version: 10.1.4(chokidar@3.6.0)(typescript@5.6.2)
+      '@nestjs/testing':
+        specifier: catalog:nestjs
+        version: 10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/microservices@10.4.4)(@nestjs/platform-express@10.4.4)(@nestjs/websockets@10.4.4)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/microservices@10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.4)(@nestjs/websockets@10.4.4)(cache-manager@5.7.6)(ioredis@5.4.1)(nats@2.28.2)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.4(@nestjs/common@10.4.4(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.4))
+      '@types/jest':
+        specifier: 'catalog:'
+        version: 29.5.13
+      '@types/node':
+        specifier: 'catalog:'
+        version: 20.14.15
+      '@types/supertest':
+        specifier: catalog:nestjs
+        version: 6.0.2
+      cache-manager:
+        specifier: catalog:nestjs
+        version: 5.7.6
+      cache-manager-redis-store:
+        specifier: catalog:nestjs
+        version: 3.0.1
+      eslint:
+        specifier: catalog:nestjs
+        version: 8.57.1
+      jest:
+        specifier: 'catalog:'
+        version: 29.7.0(@types/node@20.14.15)(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.6.2))
+      prettier:
+        specifier: 'catalog:'
+        version: 3.3.3
+      redis:
+        specifier: catalog:nestjs
+        version: 4.7.0
+      source-map-support:
+        specifier: catalog:nestjs
+        version: 0.5.21
+      supertest:
+        specifier: catalog:nestjs
+        version: 7.0.0
+      ts-jest:
+        specifier: catalog:nestjs
+        version: 29.2.5(@babel/core@7.25.2)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.25.2))(jest@29.7.0(@types/node@20.14.15)(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.6.2)))(typescript@5.6.2)
+      ts-loader:
+        specifier: catalog:nestjs
+        version: 9.5.1(typescript@5.6.2)(webpack@5.94.0)
+      ts-node:
+        specifier: catalog:nestjs
+        version: 10.9.2(@types/node@20.14.15)(typescript@5.6.2)
+      tsconfig-paths:
+        specifier: catalog:nestjs
+        version: 4.2.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.6.2
+
   apps/webapp:
     dependencies:
       '@app/db':

@@ -34,6 +34,23 @@ services:
       - nats
     command: ["pnpm", "run", "-C", "apps/api-gateway", "start"]
 
+  dev-users-microservice:
+    build:
+      context: .
+      dockerfile: apps/users-microservice/Dockerfile
+      target: dev
+    image: users-microservice:latest
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env.development
+    environment:
+      - NATS_HOST=nats
+    depends_on:
+      - nats
+    command: ["pnpm", "run", "-C", "apps/users-microservice", "start"]
+
 networks:
   default:
     name: app-network

@@ -1,0 +1,87 @@
+{
+  "name": "@app/users-microservice",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "license": "UNLICENSED",
+  "author": "",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "pnpm with-env nest build",
+    "clean": "rm -rf .turbo node_modules dist",
+    "dev": "pnpm with-env nest start --watch",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "start": "pnpm with-env nest start",
+    "start:debug": "pnpm with-env nest start --debug --watch",
+    "start:prod": "pnpm with-env node dist/main",
+    "test": "pnpm with-env jest",
+    "test:cov": "pnpm with-env jest --coverage",
+    "test:debug": "pnpm with-env node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "pnpm with-env jest --config ./test/jest-e2e.json",
+    "test:watch": "pnpm with-env jest --watch",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "prettier": "@app/prettier-config",
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testEnvironment": "node",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "@fastify/multipart": "catalog:nestjs",
+    "@fastify/static": "catalog:nestjs",
+    "@nestjs/common": "catalog:nestjs",
+    "@nestjs/config": "catalog:nestjs",
+    "@nestjs/core": "catalog:nestjs",
+    "@nestjs/microservices": "catalog:nestjs",
+    "@nestjs/platform-fastify": "catalog:nestjs",
+    "class-transformer": "catalog:nestjs",
+    "class-validator": "catalog:nestjs",
+    "dotenv-cli": "catalog:",
+    "nats": "catalog:nestjs",
+    "reflect-metadata": "catalog:nestjs",
+    "rxjs": "catalog:nestjs",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@app/api-core": "workspace:*",
+    "@app/constants": "workspace:*",
+    "@app/eslint-config-nest": "workspace:*",
+    "@app/tsconfig": "workspace:*",
+    "@nestjs/cache-manager": "catalog:nestjs",
+    "@nestjs/cli": "catalog:nestjs",
+    "@nestjs/schematics": "catalog:nestjs",
+    "@nestjs/testing": "catalog:nestjs",
+    "@types/jest": "catalog:",
+    "@types/node": "catalog:",
+    "@types/supertest": "catalog:nestjs",
+    "cache-manager": "catalog:nestjs",
+    "cache-manager-redis-store": "catalog:nestjs",
+    "eslint": "catalog:nestjs",
+    "jest": "catalog:",
+    "prettier": "catalog:",
+    "redis": "catalog:nestjs",
+    "source-map-support": "catalog:nestjs",
+    "supertest": "catalog:nestjs",
+    "ts-jest": "catalog:nestjs",
+    "ts-loader": "catalog:nestjs",
+    "ts-node": "catalog:nestjs",
+    "tsconfig-paths": "catalog:nestjs",
+    "typescript": "catalog:"
+  }
+}
