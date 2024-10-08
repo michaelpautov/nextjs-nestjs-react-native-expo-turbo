@@ -12,44 +12,60 @@ services:
     image: redis:latest
     ports:
       - "${REDIS_PORT}:6379"
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin123}
+      POSTGRES_MULTIPLE_DATABASES: ${POSTGRES_MULTIPLE_DATABASES:-users_db,tasks_db}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-admin}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # DEV
+#  dev-api-gateway:
+#    build:
+#      context: .
+#      dockerfile: apps/api-gateway/Dockerfile
+#      target: dev
+#    ports:
+#      - "8080:8080"
+#    volumes:
+#      - .:/app
+#      - /app/node_modules
+#    env_file:
+#      - .env.development
+#    environment:
+#      - NATS_HOST=nats
+#    depends_on:
+#      - nats
+#    command: ["pnpm", "run", "-C", "apps/api-gateway", "start"]
 
-  dev-api-gateway:
-    build:
-      context: .
-      dockerfile: apps/api-gateway/Dockerfile
-      target: dev
-    image: api-gateway:latest
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-      - /app/node_modules
-    env_file:
-      - .env.development
-    environment:
-      - NATS_HOST=nats
-    depends_on:
-      - nats
-    command: ["pnpm", "run", "-C", "apps/api-gateway", "start"]
+#  dev-users-microservice:
+#    build:
+#      context: .
+#      dockerfile: apps/users-microservice/Dockerfile
+#      target: dev
+#    volumes:
+#      - .:/app
+#      - /app/node_modules
+#    env_file:
+#      - .env.development
+#    environment:
+#      - NATS_HOST=nats
+#    depends_on:
+#      - nats
+#    command: ["pnpm", "run", "-C", "apps/users-microservice", "start"]
 
-  dev-users-microservice:
-    build:
-      context: .
-      dockerfile: apps/users-microservice/Dockerfile
-      target: dev
-    image: users-microservice:latest
-    volumes:
-      - .:/app
-      - /app/node_modules
-    env_file:
-      - .env.development
-    environment:
-      - NATS_HOST=nats
-    depends_on:
-      - nats
-    command: ["pnpm", "run", "-C", "apps/users-microservice", "start"]
+volumes:
+  postgres_data:
 
 networks:
   default:

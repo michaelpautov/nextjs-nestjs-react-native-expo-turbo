@@ -6,7 +6,7 @@ docker:
 
 # Target to build Docker containers
 dev-docker:
-	docker compose -f docker-compose.yml --env-file ./.env.development up --build -V
+	docker-compose -f docker-compose.yml --env-file ./.env.development up --build -V
 
 docker-clean:
 	docker compose rm -f

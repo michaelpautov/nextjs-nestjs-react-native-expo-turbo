@@ -53,7 +53,13 @@
     "class-transformer": "catalog:nestjs",
     "class-validator": "catalog:nestjs",
     "dotenv-cli": "catalog:",
+    "drizzle-kit": "catalog:nestjs",
+    "drizzle-orm": "catalog:nestjs",
+    "drizzle-zod": "catalog:nestjs",
+    "eslint-plugin-drizzle": "catalog:nestjs",
     "nats": "catalog:nestjs",
+    "pg": "catalog:nestjs",
+    "postgres": "catalog:nestjs",
     "reflect-metadata": "catalog:nestjs",
     "rxjs": "catalog:nestjs",
     "zod": "catalog:"

@@ -18,6 +18,7 @@ COPY tooling ./tooling
 COPY packages ./packages
 
 RUN pnpm install && \
+    pnpm add -w -D dotenv-cli && \
     pnpm -r prebuild && \
     pnpm -r build && \
     pnpm i && \

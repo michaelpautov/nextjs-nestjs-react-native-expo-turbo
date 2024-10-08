@@ -18,12 +18,20 @@
     "@nestjs/cache-manager": "catalog:nestjs",
     "@nestjs/common": "catalog:nestjs",
     "@nestjs/config": "catalog:nestjs",
+    "@nestjs/microservices": "catalog:nestjs",
     "cache-manager": "catalog:nestjs",
     "cache-manager-redis-store": "catalog:nestjs",
     "class-transformer": "catalog:nestjs",
     "class-validator": "catalog:nestjs",
+    "dotenv-cli": "catalog:",
+    "drizzle-kit": "catalog:nestjs",
+    "drizzle-orm": "catalog:nestjs",
+    "drizzle-zod": "catalog:nestjs",
+    "eslint-plugin-drizzle": "catalog:nestjs",
+    "pg": "catalog:nestjs",
     "pino": "^9.3.1",
     "pino-pretty": "^11.2.1",
+    "postgres": "catalog:nestjs",
     "redis": "catalog:nestjs"
   },
   "devDependencies": {
@@ -31,7 +39,6 @@
     "@app/eslint-config-nest": "workspace:*",
     "@app/prettier-config": "workspace:*",
     "@app/tsconfig": "workspace:*",
-    "dotenv-cli": "catalog:",
     "eslint": "catalog:nestjs",
     "prettier": "catalog:",
     "typescript": "catalog:"
