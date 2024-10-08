@@ -7,7 +7,7 @@ import {
 } from "@app/api-core";
 
 import { AppController } from "./app.controller";
-import { users } from "./schema/users";
+import * as schema from "./schema";
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { users } from "./schema/users";
     DatabaseModule.forRootAsync({
       dbName: "USER",
       connectionName: DATABASE_CONNECTION.USERS_DATABASE_CONNECTION,
-      schema: { users },
+      schema,
     }),
   ],
   controllers: [AppController],
