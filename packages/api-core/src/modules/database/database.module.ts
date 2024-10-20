@@ -51,12 +51,13 @@ export class DatabaseModule {
               );
               throw error;
             }
-            return drizzle(pool, schema);
+            return drizzle(pool, { schema });
           },
           inject: [ConfigService],
         },
       ],
       exports: [connectionName],
+      global: true,
     };
   }
 }

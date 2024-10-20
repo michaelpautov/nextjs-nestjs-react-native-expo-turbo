@@ -63,6 +63,7 @@
     "@app/constants": "workspace:*",
     "@app/eslint-config-nest": "workspace:*",
     "@app/tsconfig": "workspace:*",
+    "@app/validators": "workspace:*",
     "@nestjs/cache-manager": "catalog:nestjs",
     "@nestjs/cli": "catalog:nestjs",
     "@nestjs/schematics": "catalog:nestjs",

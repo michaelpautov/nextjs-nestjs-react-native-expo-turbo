@@ -17,12 +17,11 @@ Work especially great to quickly kick off after creating a new branch.
 `mv .env.example .env.development` (development) </br>
 update that .env variables </br>
 `.env.development` -> `NODE_ENV=development` </br>
-`API_KEY`</br>
-`SUPABASE_DB_URL` </br>
-`SUPABASE_URL` </br>
-`SUPABASE_KEY` </br>
-AUTH_SECRET
-
-### Base
-
+### Base setup for app
 ```make setup```
+
+
+### RUN API
+
+```pnpm run dev:api```
+

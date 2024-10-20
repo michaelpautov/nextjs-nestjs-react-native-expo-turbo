@@ -6,8 +6,8 @@ import {
   DatabaseModule,
 } from "@app/api-core";
 
-import { AppController } from "./app.controller";
-import * as schema from "./schema";
+import { UsersModule } from "./modules/users/users.module";
+import { usersMicroserviceSchema } from "./schema";
 
 @Module({
   imports: [
@@ -15,9 +15,9 @@ import * as schema from "./schema";
     DatabaseModule.forRootAsync({
       dbName: "USER",
       connectionName: DATABASE_CONNECTION.USERS_DATABASE_CONNECTION,
-      schema,
+      schema: usersMicroserviceSchema,
     }),
+    UsersModule,
   ],
-  controllers: [AppController],
 })
 export class AppModule {}

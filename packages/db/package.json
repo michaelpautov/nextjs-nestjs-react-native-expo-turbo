@@ -3,35 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./src/index.ts"
-    },
-    "./client": {
-      "types": "./dist/client.d.ts",
-      "default": "./src/client.ts"
-    },
-    "./schema": {
-      "types": "./dist/schema.d.ts",
-      "default": "./src/schema.ts"
-    }
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "db:drop": "pnpm with-env npx drizzle-kit drop",
+    "db:generate": "pnpm run db:generate:users_db && pnpm run db:generate:tasks_db",
+    "db:generate:tasks_db": "pnpm with-env npx drizzle-kit generate --config=src/config/tasks-db.config.ts",
+    "db:generate:users_db": "pnpm with-env npx drizzle-kit generate --config=src/config/users-db.config.ts",
+    "db:introspect": "pnpm with-env npx drizzle-kit introspect",
+    "db:migrate": "pnpm with-env npx drizzle-kit migrate",
+    "db:migrate:users_db": "pnpm with-env npx drizzle-kit migrate --config=src/config/users-db.config.ts",
+    "db:migrate:tasks_db": "pnpm with-env npx drizzle-kit migrate --config=src/config/users-db.config.ts",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
   },
-  "scripts": {},
   "prettier": "@app/prettier-config",
   "dependencies": {
-    "@vercel/postgres": "^0.9.0",
-    "drizzle-orm": "^0.33.0",
-    "drizzle-zod": "^0.5.1",
+    "drizzle-orm": "catalog:nestjs",
+    "drizzle-zod": "catalog:nestjs",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@app/eslint-config": "workspace:*",
     "@app/prettier-config": "workspace:*",
     "@app/tsconfig": "workspace:*",
-    "dotenv-cli": "^7.4.2",
-    "drizzle-kit": "^0.24.2",
+    "dotenv-cli": "catalog:",
+    "drizzle-kit": "catalog:nestjs",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"

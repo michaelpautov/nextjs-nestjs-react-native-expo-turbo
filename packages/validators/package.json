@@ -3,13 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./src/index.ts"
-    }
-  },
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
@@ -20,9 +14,11 @@
   },
   "prettier": "@app/prettier-config",
   "dependencies": {
+    "drizzle-zod": "catalog:nestjs",
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@app/db": "workspace:*",
     "@app/eslint-config": "workspace:*",
     "@app/prettier-config": "workspace:*",
     "@app/tsconfig": "workspace:*",

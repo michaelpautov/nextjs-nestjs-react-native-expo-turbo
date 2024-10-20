@@ -4,6 +4,7 @@ import { ClientsModule, Transport } from "@nestjs/microservices";
 
 import { SERVICE_NAMES } from "../../constants/service-names";
 import { APIConfigModule } from "../api-config/api-config.module";
+import { CustomNatsClient } from "./custom-nats.client";
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { APIConfigModule } from "../api-config/api-config.module";
       },
     ]),
   ],
+  providers: [CustomNatsClient],
   exports: [
     ClientsModule.registerAsync([
       {
@@ -43,6 +45,7 @@ import { APIConfigModule } from "../api-config/api-config.module";
         },
       },
     ]),
+    CustomNatsClient,
   ],
 })
 export class NatsModule {}
