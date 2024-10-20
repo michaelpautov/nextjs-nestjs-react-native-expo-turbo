@@ -2,7 +2,6 @@ import { Inject, Injectable } from "@nestjs/common";
 import { eq } from "drizzle-orm";
 import { PostgresJsDatabase } from "drizzle-orm/postgres-js";
 import { omit } from "ramda";
-import { throwError } from "rxjs";
 
 import {
   DATABASE_CONNECTION,

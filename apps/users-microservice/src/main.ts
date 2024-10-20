@@ -2,7 +2,7 @@ import { ConfigService } from "@nestjs/config";
 import { NestFactory } from "@nestjs/core";
 import { MicroserviceOptions, Transport } from "@nestjs/microservices";
 
-import { ExceptionFilter, logger } from "@app/api-core";
+import { logger } from "@app/api-core";
 
 import { AppModule } from "./app.module";
 
