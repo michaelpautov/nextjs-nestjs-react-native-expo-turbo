@@ -2,7 +2,7 @@ import * as process from "node:process";
 import { registerAs } from "@nestjs/config";
 import { IsInt, IsString, Max, Min } from "class-validator";
 
-import validateConfig from ".././utils/validate-config";
+import validateConfig from "../../utils/validate-config";
 import { DBConfig } from "./db-config.type";
 
 class EnvironmentVariablesValidator {

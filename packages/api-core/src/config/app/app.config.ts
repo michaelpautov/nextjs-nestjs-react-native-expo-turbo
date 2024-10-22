@@ -2,7 +2,7 @@ import * as process from "node:process";
 import { registerAs } from "@nestjs/config";
 import { IsEnum, IsInt, IsOptional, IsString, Max, Min } from "class-validator";
 
-import validateConfig from ".././utils/validate-config";
+import validateConfig from "../../utils/validate-config";
 import { AppConfig } from "./app-config.type";
 
 enum Environment {
@@ -76,5 +76,10 @@ export default registerAs<AppConfig>("app", () => {
     // NATS
     NATS_PORT: parseInt(process.env.NATS_PORT as string)!,
     NATS_HOST: process.env.NATS_HOST!,
+    // APP
+    WORKING_DIRECTORY: process.env.PWD || process.cwd(),
+    APP_NAME: "test",
+    FRONTEND_DOMAIN: "test",
+    BACKEND_DOMAIN: "test",
   };
 });

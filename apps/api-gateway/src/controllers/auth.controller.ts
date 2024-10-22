@@ -14,7 +14,7 @@ export class AuthController {
   @Post("signup")
   @UsePipes(new ZodValidationPipe(createUserDtoSchema))
   async signUp(@Body() createUserDTO: CreateUserDTO) {
-    return await this.natsClient.send(
+    await this.natsClient.send(
       { cmd: NATS_MESSAGES.AUTH.SIGN_UP },
       createUserDTO,
     );

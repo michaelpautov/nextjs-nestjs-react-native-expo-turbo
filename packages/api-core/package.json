@@ -28,6 +28,8 @@
     "drizzle-orm": "catalog:nestjs",
     "drizzle-zod": "catalog:nestjs",
     "eslint-plugin-drizzle": "catalog:nestjs",
+    "nestjs-i18n": "^10.4.9",
+    "nodemailer": "^6.9.15",
     "pg": "catalog:nestjs",
     "pino": "^9.3.1",
     "pino-pretty": "^11.2.1",
@@ -39,6 +41,7 @@
     "@app/eslint-config-nest": "workspace:*",
     "@app/prettier-config": "workspace:*",
     "@app/tsconfig": "workspace:*",
+    "@types/nodemailer": "^6.4.16",
     "eslint": "catalog:nestjs",
     "prettier": "catalog:",
     "typescript": "catalog:"

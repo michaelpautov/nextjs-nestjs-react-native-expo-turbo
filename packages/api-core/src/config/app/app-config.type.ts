@@ -14,4 +14,9 @@ export interface AppConfig {
   // NATS
   NATS_HOST: string;
   NATS_PORT: number;
+  // APP
+  WORKING_DIRECTORY: string;
+  APP_NAME: string;
+  FRONTEND_DOMAIN?: string;
+  BACKEND_DOMAIN: string;
 }

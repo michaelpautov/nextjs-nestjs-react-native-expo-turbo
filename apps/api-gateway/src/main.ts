@@ -8,6 +8,7 @@ import {
 import { AllConfigType, logger } from "@app/api-core";
 
 import { AppModule } from "./app.module";
+import { HttpExceptionFilter } from "./filters/http-exceptin.filter";
 
 async function bootstrap() {
   const fastifyAdapter = new FastifyAdapter({ logger });
@@ -16,6 +17,7 @@ async function bootstrap() {
     fastifyAdapter,
   );
   const configService = app.get(ConfigService<AllConfigType>);
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   app.setGlobalPrefix(
     configService.getOrThrow("app.API_PREFIX", { infer: true }),

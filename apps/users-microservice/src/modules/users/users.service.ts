@@ -6,6 +6,7 @@ import { omit } from "ramda";
 import {
   DATABASE_CONNECTION,
   EmailAlreadyExistsException,
+  logger,
 } from "@app/api-core";
 import { usersTable } from "@app/db";
 import { CreateUserDTO, UserRow } from "@app/validators";
@@ -23,7 +24,9 @@ export class UsersService {
     const { email, password } = createUserDTO;
     const userObject = await this.getUserByEmail(email);
     if (userObject) {
-      throw new EmailAlreadyExistsException();
+      const error = new EmailAlreadyExistsException();
+      logger.error(error.message);
+      throw error;
     }
     const [createdUser] = await this.db
       .insert(usersTable)
